@@ -1,0 +1,154 @@
+<ul class="navbar-nav mt-5">
+	<li class="nav-item dropdown mega-locations"><a aria-expanded="false" class="nav-link dropdown-toggle" href="#" id="locationsMenu"><span class="link-content" style="display: inherit;">Locations</span></a>
+	<div aria-labelledby="locationsMenu" class="dropdown-menu p-0 mega-panel" role="menu">
+	<div class="mega-row mega-cta" role="none"><a class="btn btn-primary mega-cta-btn" href="/find-care" role="menuitem"><span class="link-content" style="display: inherit;">Find a Location / Doctor</span></a><button class="btn btn-outline-secondary mega-cta-btn" id="useMyLocationBtn" type="button">Use My Location</button></div>
+
+	<hr class="m-0" />
+	<div class="mega-row mega-body" role="none">
+	<div class="mega-col services" role="none">
+	<div class="mega-h">Services</div>
+
+	<ul aria-label="Services" class="mega-list" role="menu">
+		<li><button class="service-btn active">Family &amp; Internal Medicine</button></li>
+		<li><button class="service-btn">Womens Health &amp; Gynecology</button></li>
+		<li><button class="service-btn">Medical Lab Work</button></li>
+		<li><button class="service-btn">Administrative Office</button></li>
+	</ul>
+	</div>
+
+	<div class="mega-col detail" role="none">
+	<section aria-label="Family &amp; Internal Medicine" class="service-panel show" id="panel-fim">
+	<div class="mega-h">Family &amp; Internal Medicine</div>
+
+	<ul class="divisions-list">
+		<li class="division"><a class="division-link" href="/divisions/heyl-family-practice"><span class="link-content" style="display: inherit;">Heyl Family Practice</span></a><button aria-controls="heyl-locs" aria-expanded="false" aria-label="Toggle Heyl locations" class="toggle-locs"></button>
+
+		<ul class="locations" id="heyl-locs">
+			<li><a href="/locations/heyl-family-practice-gibsonia"><span class="link-content" style="display: inherit;">Gibsonia</span></a></li>
+			<li><a href="/locations/heyl-family-practice-mccandless"><span class="link-content" style="display: inherit;">McCandless</span></a></li>
+			<li><a href="/locations/heyl-family-practice-west-view"><span class="link-content" style="display: inherit;">West View</span></a></li>
+		</ul>
+		</li>
+		<li class="division"><a class="division-link" href="/divisions/gswg"><span class="link-content" style="display: inherit;">Grob, Scheri, Woodburn &amp; Griffin (GSWG)</span></a><button aria-controls="gswg-locs" aria-expanded="false" aria-label="Toggle GSWG locations" class="toggle-locs"></button>
+		<ul class="locations" id="gswg-locs">
+			<li><a href="/locations/gswg-perrysville"><span class="link-content" style="display: inherit;">Perrysville</span></a></li>
+			<li><a href="/locations/gswg-wexford"><span class="link-content" style="display: inherit;">Wexford</span></a></li>
+		</ul>
+		</li>
+		<li class="division"><a class="division-link" href="/divisions/dayalan-associates"><span class="link-content" style="display: inherit;">Dayalan &amp; Associates Family Medicine</span></a></li>
+		<li class="division"><a class="division-link" href="/divisions/koman-kimmel-gabriel"><span class="link-content" style="display: inherit;">Koman, Kimmel &amp; Gabriel Family Medicine</span></a></li>
+		<li class="division"><a class="division-link" href="/divisions/northern-area-family-medicine"><span class="link-content" style="display: inherit;">Northern Area Family Medicine</span></a></li>
+		<li class="division"><a class="division-link" href="/divisions/schogel-fardo"><span class="link-content" style="display: inherit;">Schogel &amp; Fardo Family Medicine</span></a></li>
+		<li class="division"><a class="division-link" href="/divisions/primary-care-associates"><span class="link-content" style="display: inherit;">Primary Care Associates</span></a></li>
+		<li class="division"><a class="division-link" href="/divisions/family-practice-associates"><span class="link-content" style="display: inherit;">Family Practice Associates</span></a></li>
+		<li class="all-link"><a href="/locations?service=family-internal-medicine"><span class="link-content" style="display: inherit;">All Family &amp; Internal Medicine Locations &rarr;</span></a></li>
+	</ul>
+	</section>
+
+	<section aria-label="Womens Health &amp; Gynecology" class="service-panel" id="panel-whg">
+	<div class="mega-h">Womens Health &amp; Gynecology</div>
+
+	<ul class="divisions-list">
+		<li class="division"><a class="division-link" href="/divisions/genesis-womens-health"><span class="link-content" style="display: inherit;">Genesis Women&rsquo;s Health</span></a><button aria-controls="whg-genesis" aria-expanded="false" aria-label="Toggle Women’s Health locations" class="toggle-locs"></button>
+
+		<ul class="locations" id="whg-genesis">
+			<li><a href="/locations/genesis-womens-health-north"><span class="link-content" style="display: inherit;">North Office</span></a></li>
+			<li><a href="/locations/genesis-womens-health-south"><span class="link-content" style="display: inherit;">South Office</span></a></li>
+		</ul>
+		</li>
+		<li class="all-link"><a href="/locations?service=womens-health-gynecology"><span class="link-content" style="display: inherit;">All Women&rsquo;s Health Locations &rarr;</span></a></li>
+	</ul>
+	</section>
+
+	<section aria-label="Medical Lab Work" class="service-panel" id="panel-lab">
+	<div class="mega-h">Medical Lab Work</div>
+
+	<ul class="divisions-list">
+		<li class="division"><a class="division-link" href="/divisions/genesis-labs"><span class="link-content" style="display: inherit;">Genesis Labs</span></a></li>
+		<li class="all-link"><a href="/locations?service=lab"><span class="link-content" style="display: inherit;">All Lab Locations &rarr;</span></a></li>
+	</ul>
+	</section>
+
+	<section aria-label="Administrative Office" class="service-panel" id="panel-admin">
+	<div class="mega-h">Administrative Office</div>
+
+	<ul class="divisions-list">
+		<li class="division"><a class="division-link" href="/locations/administrative-office"><span class="link-content" style="display: inherit;">Corporate / Administrative Office</span></a></li>
+	</ul>
+	</section>
+	</div>
+	</div>
+	</div>
+	</li>
+</ul>
+<style type="text/css">.mega-locations { position:relative; }
+.mega-locations .nav-link{ cursor:pointer; }
+
+.mega-locations .mega-panel{
+  position:absolute; top:100%; left:0;
+  width:min(100vw, 1000px);
+  background:var(--panel);
+  backdrop-filter:saturate(1.1) blur(6px);
+  border:1px solid var(--edge);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:none;  /* toggled via JS */
+  z-index:1000;
+}
+.mega-locations.open .mega-panel{ display:block; }
+
+.mega-row{display:grid;gap:20px;padding:16px 20px}
+.mega-cta{grid-template-columns:1fr 1fr;align-items:center;padding:16px 18px;background:linear-gradient(180deg, rgba(15,111,142,.06), transparent)}
+.mega-body{grid-template-columns:300px 1fr;padding:0}
+
+/* buttons */
+.mega-cta .btn{border-radius:12px;padding:12px 14px;font-weight:600;box-shadow:var(--shadow-sm)}
+.mega-cta .btn.btn-outline-secondary{border:1px solid var(--edge)}
+
+/* left rail (services) */
+.mega-col.services{padding:16px 14px;border-right:1px solid var(--edge-2);position:relative}
+.mega-col.services::after{content:"";position:absolute;inset:auto 0 0 0;height:16px;background:linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,.9));pointer-events:none}
+.mega-col .mega-h{color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.78rem;margin:2px 4px 8px}
+.mega-list{list-style:none;margin:0;padding:0}
+.service-btn{width:100%;text-align:left;padding:10px 12px;border-radius:10px;border:0;background:transparent;color:var(--ink);font-weight:600;transition:background .15s ease, color .15s ease, transform .04s}
+.service-btn:hover{background:rgba(15,111,142,.07)}
+.service-btn:active{transform:translateY(1px)}
+.service-btn.active{background:rgba(15,111,142,.12);color:var(--brand-2);box-shadow:0 0 0 3px var(--ring)}
+
+/* right panel */
+.mega-col.detail{padding:16px 18px;max-height:66vh;overflow:auto}
+.service-panel{display:none}
+.service-panel.show{display:block}
+
+.divisions-list{margin:4px 0 0;padding:0;list-style:none}
+.division{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:10px 8px;border-bottom:1px dashed var(--edge-2)}
+.division:last-child{border-bottom:0}
+
+.division-link{ text-decoration:none;color:var(--ink);font-weight:600;line-height:1.25;padding:6px 8px;border-radius:8px;transition:background .12s ease, color .12s ease}
+.division-link:hover{ background:rgba(15,111,142,.07); color:var(--brand-2) }
+
+/* toggle chevron */
+.toggle-locs{border:0;background:transparent;width:36px;height:36px;display:grid;place-items:center;border-radius:10px;cursor:pointer;transition:background .15s ease, transform .15s ease}
+.toggle-locs:hover{background:rgba(15,111,142,.07)}
+.toggle-locs svg{width:16px;height:16px;transition:transform .18s ease}
+.toggle-locs[aria-expanded="true"] svg{transform:rotate(180deg)}
+
+/* nested locations */
+.locations{margin:6px 0 6px 6px;padding:6px 10px 2px 12px;border-left:3px solid rgba(15,111,142,.15)}
+.locations li{list-style:none}
+.locations li a{display:block;padding:6px 6px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:.96rem}
+.locations li a:hover{background:rgba(15,111,142,.07);color:var(--brand-2)}
+
+/* focus visible for a11y */
+.mega-panel :is(a,button){outline:none}
+.mega-panel :is(a,button):focus-visible{box-shadow:0 0 0 3px var(--ring);border-radius:10px}
+
+/* mobile */
+@media (max-width: 991px){
+  .mega-row{grid-template-columns:1fr}
+  .mega-cta{grid-template-columns:1fr}
+  .mega-body{grid-template-columns:1fr}
+  .mega-col.detail{max-height:58vh}
+}
+</style>
