@@ -1,0 +1,114 @@
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const heroSection = document.createElement("section");
+  heroSection.className = "hero-block d-flex align-items-center text-white text-center mt-5";
+  heroSection.style.position = "relative";
+  heroSection.style.background = "linear-gradient(135deg, #0052a5, #00264d)";
+  heroSection.style.minHeight = "70vh";
+  heroSection.style.overflow = "hidden";
+  heroSection.style.color = "#ffffff";
+
+  const container = document.createElement("div");
+  container.className = "container";
+
+  const headline = document.createElement("h1");
+  headline.className = "display-4 font-weight-bold";
+  headline.style.color = "#ffffff";
+  headline.textContent = "Experience Something Bold";
+  container.appendChild(headline);
+
+  const paragraph = document.createElement("p");
+  paragraph.className = "lead";
+  paragraph.style.color = "#ffffff";
+  paragraph.textContent = "Catchy tagline with energy and movement built in.";
+  container.appendChild(paragraph);
+
+  const btn = document.createElement("a");
+  btn.className = "btn btn-lg mt-3";
+  btn.href = "#";
+  btn.style.backgroundColor = "#ffffff"; 
+  btn.style.color = "#0052a5"; 
+  btn.style.fontWeight = "600";
+  btn.textContent = "Explore Now";
+  container.appendChild(btn);
+
+  heroSection.appendChild(container);
+
+  const svgNS = "http://www.w3.org/2000/svg";
+
+  function createWave(className, values, opacity = 1, duration = "12s") {
+    const wave = document.createElementNS(svgNS, "svg");
+    wave.setAttribute("class", `hero-wave ${className}`);
+    wave.setAttribute("viewBox", "0 0 1440 200");
+    wave.setAttribute("preserveAspectRatio", "none");
+    wave.style.position = "absolute";
+    wave.style.bottom = "0";
+    wave.style.left = "0";
+    wave.style.width = "400%";
+    wave.style.height = "150px";
+    wave.style.opacity = opacity;
+    wave.dataset.speed = opacity; // Use opacity as parallax speed factor
+
+    const path = document.createElementNS(svgNS, "path");
+    path.setAttribute("fill", "#ffffff");
+    path.setAttribute("d", values[0]);
+
+    const animate = document.createElementNS(svgNS, "animate");
+    animate.setAttribute("attributeName", "d");
+    animate.setAttribute("dur", duration);
+    animate.setAttribute("repeatCount", "indefinite");
+    animate.setAttribute("values", values.join(";"));
+    path.appendChild(animate);
+
+    wave.appendChild(path);
+    heroSection.appendChild(wave);
+  }
+
+  createWave("wave1", [
+    "M0,60 C360,140 1080,-20 1440,60 L1440,200 L0,200 Z",
+    "M0,70 C360,130 1080,-10 1440,70 L1440,200 L0,200 Z",
+    "M0,60 C360,140 1080,-20 1440,60 L1440,200 L0,200 Z"
+  ], 1, "12s");
+
+  createWave("wave2", [
+    "M0,80 C360,-20 1080,140 1440,80 L1440,200 L0,200 Z",
+    "M0,90 C360,0 1080,130 1440,90 L1440,200 L0,200 Z",
+    "M0,80 C360,-20 1080,140 1440,80 L1440,200 L0,200 Z"
+  ], 0.6, "18s");
+
+  document.body.prepend(heroSection);
+
+  const style = document.createElement("style");
+  style.textContent = `
+    .hero-block .btn { color: #0052a5; background-color: #ffffff; font-weight:600; }
+  `;
+  document.head.appendChild(style);
+
+  const text = headline.textContent;
+  headline.textContent = "";
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      headline.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 70);
+    }
+  }
+  typeWriter();
+
+  document.addEventListener("mousemove", function(e) {
+    const moveX = (e.clientX / window.innerWidth - 0.5) * 30; 
+    document.querySelectorAll(".hero-wave").forEach(w => {
+      w.style.transform = `translateX(${moveX}px)`; 
+    });
+  });
+
+  window.addEventListener("scroll", function() {
+    const scrollY = window.scrollY;
+    document.querySelectorAll(".hero-wave").forEach(wave => {
+      const speed = parseFloat(wave.dataset.speed); 
+      wave.style.transform = `translateY(${scrollY * speed * 0.3}px)`; 
+    });
+  });
+});
+</script>
