@@ -1,6 +1,6 @@
 <section class="hero-viewport">
 <div aria-hidden="true" class="video-bg"><iframe allow="autoplay; fullscreen; picture-in-picture" frameborder="0" loading="lazy" src="https://player.vimeo.com/video/1119893618?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;dnt=1" title="Background video"></iframe>
-<div class="video-scrim">&nbsp;</div>
+<div class="video-scrim"> </div>
 </div>
 
 <div class="hero-content d-flex flex-column justify-content-center align-items-center text-center text-white">
@@ -9,6 +9,8 @@
 <p class="lead mb-4">Enhance focus, clarity, and performance with cutting-edge brain optimization techniques.</p>
 <a class="btn btn-primary btn-lg" href="#learn-more"><span class="link-content" style="display: inherit;">Learn More</span></a></div>
 </section>
+
+
 <style type="text/css">.hero-viewport{
   position: relative;
   min-height: 100svh;
