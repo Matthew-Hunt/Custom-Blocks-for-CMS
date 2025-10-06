@@ -1,0 +1,407 @@
+<style>
+  .work-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #585CA4;
+    border-top: 8px solid #585CA4;
+    border-bottom: 8px solid #585CA4;
+    padding: 20px 0;
+    overflow: hidden;
+  }
+
+.resource-share-section  {
+  display: none !important;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: all 0.9s ease;
+  flex-wrap: nowrap!important;
+  width: 100%!important;
+  margin-left: 0;
+  overflow-x: hidden!important; 
+}
+
+  .card-wrapper {
+    flex: 0 0 25%;
+    transition: all 0.9s ease;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-wrapper.hovered {
+    flex: 0 0 50%;
+  }
+
+  .card-wrapper.dimmed {
+    flex: 0 0 16.6666%;
+  }
+
+  .work-card {
+    position: relative;
+    height: 260px;
+    background-size: cover;
+    background-position: center 15%;
+    border-radius: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    font-family: inherit;
+  }
+
+  .overlay-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #585CA4;
+    clip-path: polygon(0 0, 85% 0, 55% 100%, 0% 100%);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    transition: width 0.4s ease, opacity 0.4s ease;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hovered .overlay-left {
+    width: 50%;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .work-card .bottom-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(88, 92, 164, 0.9);
+    color: white;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    width: auto;
+    max-width: 100%;
+    border-top-right-radius: 5px;
+  }
+
+  .work-card .bottom-info h5 {
+    margin: 0;
+    font-size: 16px!important;
+    line-height: 1.2;
+    font-weight: 600;
+    font-family: inherit;
+  }
+
+  .work-card .bottom-info img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card-wrapper.hovered .bottom-info {
+    display: none !important;
+  }
+
+  .work-card-content {
+    display: none;
+    background: #585CA4;
+    text-align: left;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: inherit;
+    max-width: 70%;
+    transition: none !important;
+  }
+
+  .hovered .work-card-content {
+    display: flex !important;
+  }
+
+  .hovered .work-card-content h5.card-title {
+    font-size: clamp(12px, 1vw, 14px)!important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: white;
+  }
+
+  .hovered .work-card-content .icon {
+    width: clamp(20px, 1.2vw, 24px);
+    height: clamp(20px, 1.2vw, 24px);
+    position: static;
+    margin: 0;
+    order: 2;
+  }
+
+  .card-text-hidden {
+    display: none;
+    color: white !important;
+    font-size: clamp(8px, 0.7vw, 9px)!important;
+    line-height: 1.5;
+    max-width: 65%;
+    word-wrap: break-word;
+    transition: none !important;
+  }
+
+  .hovered .card-text-hidden {
+    display: block;
+    margin-top: 10px;
+  }
+
+@media (max-width: 991px) {
+  .carousel-wrapper {
+    flex-direction: column;
+    width: 100% !important;
+    margin-left: 0 !important;
+    gap: 20px;
+  }
+
+  .carousel-wrapper .card-wrapper:nth-of-type(1) .work-card {
+    background-position-x: 80px;
+  }
+
+  .carousel-wrapper .card-wrapper:nth-of-type(3) .work-card {
+    background-position-x: 40px;
+  }
+
+  .carousel-wrapper .card-wrapper:nth-of-type(4) .work-card {
+    background-position-x: 40px;
+  }
+
+  .card-wrapper,
+  .card-wrapper.hovered,
+  .card-wrapper.dimmed {
+    flex: 0 0 100% !important;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .work-card {
+    flex: 1;
+    height: auto;
+    min-height: 260px;
+    background-position: center 35%;
+    background-size: cover;
+  }
+
+  .overlay-left {
+    position: relative;
+    clip-path: none;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background-color: #585CA4;
+    width: 50%;
+    padding: 20px;
+    z-index: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-card-content {
+    display: flex !important;
+    background: none;
+    padding: 0;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-card-content h5.card-title {
+    font-size: 14px !important;
+    gap: 8px;
+  }
+
+  .work-card-content .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-text-hidden {
+    display: block !important;
+    font-size: 12px !important;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .bottom-info {
+    display: none !important;
+  }
+
+  .wellness-packages {
+    display: none !important;
+  }
+
+  .wellness-page-hero h3.page-subheader::after {
+    content: " – Featuring GLP-1 Medication Options";
+    display: inline;
+    color: #FFD700;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+
+  .nav-link.nonsurgical-option {
+    color: #ffffff !important;
+    background-color: #724B9B;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: 600;
+  }
+}
+
+.work-section {
+  overflow-x: hidden;
+}
+.work-card .card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px !important;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.work-card .bottom-info img {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+}
+
+
+
+<div class="work-section">
+  <h3 class="text-white text-center mb-2">A Weight Loss Program Tailored to You</h3>
+  <h2 class="text-white text-center mb-3">How It Works</h2>
+  <div class="carousel-wrapper">
+
+    <!-- CARD 1 -->
+    <div class="card-wrapper" onclick="toggleCard(this)" onmouseover="hoverCard(this)" onmouseleave="resetCards()">
+      <div class="work-card" style="background-image: url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2024411258.webp');">
+        <div class="overlay-left">
+          <div class="work-card-content">
+            <h5 class="card-title">
+              Custom Meal Plans
+              <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/meal_plan.webp" alt="Icon" class="icon">
+            </h5>
+            <p class="card-text-hidden">We’ll provide personalized meal plans tailored to your unique goals and needs, built around foods you actually enjoy.</p>
+          </div>
+        </div>
+        <div class="bottom-info">
+          <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/meal_plan.webp" alt="Icon">
+          <h5 class="card-title">Custom Meal Plans</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2: Gut Biome Testing -->
+    <div class="card-wrapper" onclick="toggleCard(this)" onmouseover="hoverCard(this)" onmouseleave="resetCards()">
+      <div class="work-card" style="background-image: url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2036186189.webp');">
+        <div class="overlay-left">
+          <div class="work-card-content">
+            <h5 class="card-title">
+              Medication
+              <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/gut_testing.webp" alt="Icon" class="icon">
+            </h5>
+            <p class="card-text-hidden">Our board-certified doctors offer prescribed GLP-1 medication (when appropriate) to help reduce appetite and regulate insulin.</p>
+          </div>
+        </div>
+        <div class="bottom-info">
+          <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/gut_testing.webp" alt="Icon">
+          <h5 class="card-title">Medication</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3: Habits -->
+<div class="card-wrapper" onclick="toggleCard(this)" onmouseover="hoverCard(this)" onmouseleave="resetCards()">
+  <div class="work-card" style="background-image: url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2320266773-1.webp');">
+    <div class="overlay-left">
+      <div class="work-card-content">
+        <h5 class="card-title">
+          Habits
+          <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/Habits_Logo.webp" alt="Icon" class="icon">
+        </h5>
+        <p class="card-text-hidden">You’ll get access to an easy-to-use app to track your food and activity, so your care team can follow your progress and support you—no paperwork needed. Our registered dietitians and nurses provide ongoing guidance to help you stay on track and reach your goals. You’ll also receive a personalized guide to manage cravings, symptoms, and build healthier eating habits.</p>
+      </div>
+    </div>
+    <div class="bottom-info">
+      <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/Habits_Logo.webp" alt="Icon">
+      <h5 class="card-title">Habits</h5>
+    </div>
+  </div>
+</div>
+
+    <!-- CARD 4: Guides & Recipes -->
+    <div class="card-wrapper" onclick="toggleCard(this)" onmouseover="hoverCard(this)" onmouseleave="resetCards()">
+      <div class="work-card" style="background-image: url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2612077897.webp');">
+        <div class="overlay-left">
+          <div class="work-card-content">
+            <h5 class="card-title">
+              Guides &amp; Recipes
+              <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/guides.webp" alt="Icon" class="icon">
+            </h5>
+            <p class="card-text-hidden">Our specialists will create shopping guides designed to simplify your trip to the store, plus a selection of delicious, easy-to-follow recipes and practical tools to make healthy habits stick.</p>
+          </div>
+        </div>
+        <div class="bottom-info">
+          <img src="https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/guides.webp" alt="Icon">
+          <h5 class="card-title">Guides &amp; Recipes</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function hoverCard(el) {
+    if (!el.classList.contains('clicked')) {
+      document.querySelectorAll('.card-wrapper').forEach(card => {
+        card.classList.remove('hovered', 'dimmed');
+      });
+      el.classList.add('hovered');
+      document.querySelectorAll('.card-wrapper').forEach(card => {
+        if (card !== el) {
+          card.classList.add('dimmed');
+        }
+      });
+    }
+  }
+
+  function resetCards() {
+    if (!document.querySelector('.card-wrapper.clicked')) {
+      document.querySelectorAll('.card-wrapper').forEach(card => {
+        card.classList.remove('hovered', 'dimmed');
+      });
+    }
+  }
+
+  function toggleCard(el) {
+    const isClicked = el.classList.contains('clicked');
+    document.querySelectorAll('.card-wrapper').forEach(card => {
+      card.classList.remove('clicked', 'hovered', 'dimmed');
+    });
+    if (!isClicked) {
+      el.classList.add('clicked', 'hovered');
+      document.querySelectorAll('.card-wrapper').forEach(card => {
+        if (card !== el) {
+          card.classList.add('dimmed');
+        }
+      });
+    }
+  }
+</script>
