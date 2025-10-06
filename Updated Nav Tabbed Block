@@ -152,4 +152,55 @@
   .mega-col.detail{max-height:58vh}
 }
 </style>
+<script>
+// open/close the mega on click (replace with your framework's dropdown if needed)
+const dropdown = document.querySelector('.mega-locations');
+const trigger = dropdown?.querySelector('.nav-link');
+trigger?.addEventListener('click', (e)=>{
+  e.preventDefault();
+  dropdown.classList.toggle('open');
+});
+// close when clicking outside
+document.addEventListener('click', (e)=>{
+  if (!dropdown) return;
+  if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+});
 
+// service panel switcher
+const serviceBtns = document.querySelectorAll('.service-btn');
+const panels = document.querySelectorAll('.service-panel');
+serviceBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    serviceBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const id = 'panel-' + btn.dataset.service;
+    panels.forEach(p=>p.classList.toggle('show', p.id === id));
+  });
+});
+
+// nested location toggles
+document.querySelectorAll('.toggle-locs').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    const list = document.getElementById(t.getAttribute('aria-controls'));
+    const open = list.hasAttribute('hidden');
+    t.setAttribute('aria-expanded', open ? 'true':'false');
+    open ? list.removeAttribute('hidden') : list.setAttribute('hidden','');
+  });
+});
+
+// "Use My Location" → /find-care?lat=..&lng=..
+document.getElementById('useMyLocationBtn')?.addEventListener('click', ()=>{
+  if (!navigator.geolocation){ window.location.href='/find-care'; return; }
+  navigator.geolocation.getCurrentPosition(
+    ({coords})=>{
+      const qp = new URLSearchParams({
+        lat: coords.latitude.toFixed(6),
+        lng: coords.longitude.toFixed(6)
+      });
+      window.location.href = '/find-care?' + qp.toString();
+    },
+    ()=> window.location.href='/find-care',
+    { enableHighAccuracy:true, timeout:8000 }
+  );
+});
+</script>
