@@ -1,0 +1,145 @@
+<h2 class="title" style="text-align: center;">Simplify Longevity into 3 Essentials</h2>
+
+<div class="timeline-container">
+<div class="timeline">
+<div class="timeline-item left">
+<div class="timeline-icon">&nbsp;</div>
+
+<div class="timeline-content">
+<h3>Optimize Your Health</h3>
+
+<p>Up to 80% of heart disease, stroke, cancer, and dementia are preventable. Focus on early detection and a proactive approach.</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-icon">&nbsp;</div>
+
+<div class="timeline-content">
+<h3>Stay Strong &amp; Resilient</h3>
+
+<p>Frailty threatens independence. Maintain strength and endurance to live life on your terms.</p>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-icon">&nbsp;</div>
+
+<div class="timeline-content">
+<h3>Sharpen Your Mind</h3>
+
+<p>Strong relationships, resilience, and a longevity mindset are key to preventing cognitive decline.</p>
+</div>
+</div>
+</div>
+</div>
+<style type="text/css">/* General Styles */
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Timeline Container */
+.timeline-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Timeline Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: #ddd;
+    transform: translateX(-50%);
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+}
+
+/* Fade-in Effect */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline Icon */
+.timeline-icon {
+    width: 16px;
+    height: 16px;
+    background: #68A74F;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline Content */
+.timeline-content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+}
+
+/* Left Items */
+.timeline-item.left .timeline-content {
+    text-align: left;
+}
+
+/* Right Items */
+.timeline-item.right {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-item.right {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .timeline-content {
+        width: 90%;
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    .timeline-icon {
+        left: 10px;
+    }
+}
+</style>
