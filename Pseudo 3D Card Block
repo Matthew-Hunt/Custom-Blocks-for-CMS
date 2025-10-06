@@ -1,0 +1,112 @@
+<style type="text/css">body {
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+      perspective: 1000px; /* this is critical */
+    }
+
+    .pseudo-3d-card {
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
+      height: 300px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      will-change: transform;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .pseudo-3d-card .icon {
+      font-size: 3rem;
+      color: #4caf50;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease-out;
+    }
+
+    .pseudo-3d-card h3 {
+      font-size: 1.3rem;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .pseudo-3d-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0;
+    }
+
+    .pseudo-3d-card:hover {
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .pseudo-3d-card:hover .icon {
+      transform: scale(1.1);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .col-lg-3 {
+      flex: 1 1 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .col-lg-3 {
+        margin-bottom: 20px;
+      }
+    }
+</style>
+<div class="container my-5">
+<div class="row justify-content-between">
+<div class="col-lg-3 mb-4">
+<div class="pseudo-3d-card"><i class="fas fa-code icon"></i>
+<h3>Web Development</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div>
+
+<div class="col-lg-3 mb-4">
+<div class="pseudo-3d-card"><i class="fas fa-chart-line icon"></i>
+
+<h3>Analytics</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div>
+
+<div class="col-lg-3 mb-4">
+<div class="pseudo-3d-card"><i class="fas fa-mobile-alt icon"></i>
+
+<h3>Mobile Apps</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</div>
+</div>
+</div>
+</div>
