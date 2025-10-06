@@ -1,0 +1,93 @@
+<div class="container py-4">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="col mt-2">
+<div class="card shadow-sm">
+<div class="card-body">
+<h3 class="card-title" style="text-align: center;"><i class="bi bi-geo-alt-fill mr-2 text-danger"></i>Downtown Office</h3>
+
+<p class="card-text" style="text-align: center;">123 Main St, Cityville</p>
+
+<p style="text-align: center;"><button class="btn btn-outline-primary" data-target="#locationModal1" data-toggle="modal">View Details</button></p>
+</div>
+</div>
+</div>
+
+<div class="col mt-2">
+<div class="card shadow-sm">
+<div class="card-body">
+<h3 class="card-title" style="text-align: center;"><i class="bi bi-geo-alt-fill mr-2 text-danger"></i>Northside Office</h3>
+
+<p class="card-text" style="text-align: center;">456 North St, Cityville</p>
+
+<p style="text-align: center;"><button class="btn btn-outline-primary" data-target="#locationModal2" data-toggle="modal">View Details</button></p>
+</div>
+</div>
+</div>
+
+<div class="col mt-2">
+<div class="card shadow-sm">
+<div class="card-body">
+<h3 class="card-title" style="text-align: center;"><i class="bi bi-geo-alt-fill mr-2 text-danger"></i>Southside Office</h3>
+
+<p class="card-text" style="text-align: center;">789 South St, Cityville</p>
+
+<p style="text-align: center;"><button class="btn btn-outline-primary" data-target="#locationModal3" data-toggle="modal">View Details</button></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="locationModal1Label" class="modal fade" id="locationModal1" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="locationModal1Label">Downtown Office</h5>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button></div>
+
+<div class="modal-body">
+<p><strong>Address:</strong> 123 Main St, Cityville</p>
+
+<p><strong>Hours:</strong> Mon&ndash;Fri: 9am&ndash;5pm</p>
+
+<p><strong>Phone:</strong> (123) 456-7890</p>
+<iframe allowfullscreen="" height="200" src="https://maps.google.com/maps?q=123 Main St Cityville&amp;output=embed" style="border: 0;" width="100%"></iframe></div>
+</div>
+</div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="locationModal2Label" class="modal fade" id="locationModal2" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="locationModal2Label">Northside Office</h5>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button></div>
+
+<div class="modal-body">
+<p><strong>Address:</strong> 456 North St, Cityville</p>
+
+<p><strong>Hours:</strong> Mon&ndash;Fri: 10am&ndash;6pm</p>
+
+<p><strong>Phone:</strong> (987) 654-3210</p>
+<iframe allowfullscreen="" height="200" src="https://maps.google.com/maps?q=456 North St Cityville&amp;output=embed" style="border: 0;" width="100%"></iframe></div>
+</div>
+</div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="locationModal3Label" class="modal fade" id="locationModal3" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="locationModal3Label">Southside Office</h5>
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button></div>
+
+<div class="modal-body">
+<p><strong>Address:</strong> 789 South St, Cityville</p>
+
+<p><strong>Hours:</strong> Mon&ndash;Fri: 8am&ndash;4pm</p>
+
+<p><strong>Phone:</strong> (555) 123-9876</p>
+<iframe allowfullscreen="" height="200" src="https://maps.google.com/maps?q=789 South St Cityville&amp;output=embed" style="border: 0;" width="100%"></iframe></div>
+</div>
+</div>
+</div>
