@@ -1,0 +1,206 @@
+  .steps-section {
+    width: 100vw;                          /* full-bleed */
+    margin-left: calc(-50vw + 50%);        /* center the 100vw section within page flow */
+    background: linear-gradient(180deg, #585CA4 0%, #6E73CF 100%);
+    padding: 40px 0 50px;
+    color: #fff;
+    overflow: hidden;
+  }
+  /* kill container padding inside steps so background hits edges */
+  .steps-section .row { margin: 0 !important; }
+  .steps-section [class^="col-"] { padding-left: 0 !important; padding-right: 0 !important; }
+
+  .steps-section h3 { color:#fff; font-size:.85rem; letter-spacing:.06em; margin-bottom:2px; text-transform:uppercase; opacity:.95; }
+  .steps-section h2 { color:#fff; font-size:1.35rem; margin-bottom:12px; }
+
+  .glp-progress{
+    width: min(1600px, 92vw); /* longer bar */
+    margin: 10px auto 18px;
+    height: 6px;
+    background: rgba(255,255,255,.22);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .glp-progress .bar{
+    height:100%;
+    width:16.6667%;
+    background:#FFD86B;
+    transition:width .28s ease;
+  }
+
+  .glp-steps{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:12px; counter-reset:step;
+    max-width: 1600px; margin: 0 auto;
+    padding: 0 10px;
+  }
+  .step{
+    position: relative;
+    border-radius:14px;
+    padding:16px;
+    width:200px;
+    min-height:120px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    overflow: visible;                      /* allow badge outside */
+    transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    border:1px solid rgba(255,255,255,.45);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1px 0 rgba(255,255,255,.12) inset, 0 4px 14px rgba(0,0,0,.2);
+  }
+  .step::before {
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,.45);  /* dark overlay */
+    z-index:1;
+    border-radius:14px;
+  }
+  .step * { position:relative; z-index:2; }
+  .step:hover{ transform:translateY(-1px); box-shadow:0 12px 22px rgba(0,0,0,.28); }
+  .step.active{ border-color:#FFD86B; box-shadow:0 14px 28px rgba(0,0,0,.32); }
+
+  .step-title{
+    font-size:.9rem;   /* smaller titles on the buttons */
+    font-weight:800;
+    line-height:1.2;
+    margin:0;
+    color:#fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,.35);
+  }
+
+  /* Big, visible number badge above each card */
+  .step:after{
+    counter-increment: step; content: counter(step);
+    position:absolute; top:-22px; left:50%; transform:translateX(-50%);
+    width:34px; height:34px; border-radius:50%;
+    background:#FFD86B; color:#2A2A2A; font-weight:800; display:grid; place-items:center;
+    font-size:.9rem;
+    box-shadow:0 8px 18px rgba(0,0,0,.35);
+    border: 2px solid rgba(255,255,255,.95);  /* white ring for contrast */
+    z-index: 5;
+  }
+
+  @media (max-width:1200px){ .step{ width:190px; } }
+  @media (max-width:992px) { .step{ width:46%; min-width:260px; } }
+  @media (max-width:576px){ .step{ width:100%; min-width:0; } }
+
+  .step-details {
+    background: #fff; color: #2A2A2A; border-radius: 14px; padding: 22px;
+    border: 1px solid #E6E6F7; box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    max-width: 960px; margin: 12px auto 0;
+  }
+  .step-details h4 { font-size: 1.05rem; margin-bottom: 10px; font-weight: 700; color: #2A2A2A; }
+  .step-details p { margin-bottom: 0; }
+
+<section class="steps-section">
+  <div class="row justify-content-center m-0">
+    <div class="col-lg-12">
+      <h3 class="text-center">A Program Tailored to You</h3>
+      <h2 class="text-center">How the GLP-1 Path Works</h2>
+
+      <div class="glp-progress" aria-hidden="true"><div class="bar" id="glpProgressBar"></div></div>
+
+      <div class="glp-steps" id="glpSteps" role="tablist" aria-label="GLP-1 Program Steps">
+        <!-- 1: Consult & Labs -->
+        <button class="step active" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2583319811.webp');" role="tab" aria-selected="true" id="step1" data-index="0">
+          <h4 class="step-title">Consult & Labs</h4>
+        </button>
+        <!-- 2: Nutrition Plan -->
+        <button class="step" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2284467597.webp');" role="tab" aria-selected="false" id="step2" data-index="1">
+          <h4 class="step-title">Nutrition Plan</h4>
+        </button>
+        <!-- 3: Get Your Shot -->
+        <button class="step" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2582619571.webp');" role="tab" aria-selected="false" id="step3" data-index="2">
+          <h4 class="step-title">Get Your Shot</h4>
+        </button>
+        <!-- 4: Habits & App -->
+        <button class="step" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2284226315.webp');" role="tab" aria-selected="false" id="step4" data-index="3">
+          <h4 class="step-title">Habits & App</h4>
+        </button>
+        <!-- 5: Follow-Ups -->
+        <button class="step" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_2204893095.webp');" role="tab" aria-selected="false" id="step5" data-index="4">
+          <h4 class="step-title">Follow-Ups</h4>
+        </button>
+        <!-- 6: Maintenance -->
+        <button class="step" style="background-image:url('https://storage.googleapis.com/treatspace-prod-media/pracimg/u-2794/shutterstock_1786098227.webp');" role="tab" aria-selected="false" id="step6" data-index="5">
+          <h4 class="step-title">Maintenance</h4>
+        </button>
+      </div>
+
+      <div class="step-details mt-2" id="glpStepDetails" role="tabpanel" aria-labelledby="step1">
+        <h4 id="stepPanel1">Step 1: Consult with Provider & Labs</h4>
+        <p>Meet with your specialist to review your health history, goals, and lab results. We’ll determine the safest, most effective plan tailored to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* legacy hover/toggle (kept) */
+  function hoverCard(el) {
+    if (!el.classList.contains('clicked')) {
+      document.querySelectorAll('.card-wrapper').forEach(card => { card.classList.remove('hovered', 'dimmed'); });
+      el.classList.add('hovered');
+      document.querySelectorAll('.card-wrapper').forEach(card => { if (card !== el) card.classList.add('dimmed'); });
+    }
+  }
+  function resetCards() {
+    if (!document.querySelector('.card-wrapper.clicked')) {
+      document.querySelectorAll('.card-wrapper').forEach(card => { card.classList.remove('hovered', 'dimmed'); });
+    }
+  }
+  function toggleCard(el) {
+    const isClicked = el.classList.contains('clicked');
+    document.querySelectorAll('.card-wrapper').forEach(card => { card.classList.remove('clicked', 'hovered', 'dimmed'); });
+    if (!isClicked) {
+      el.classList.add('clicked', 'hovered');
+      document.querySelectorAll('.card-wrapper').forEach(card => { if (card !== el) card.classList.add('dimmed'); });
+    }
+  }
+
+  /* Interactive multi-step program */
+  (function(){
+    var steps = Array.from(document.querySelectorAll('.glp-steps .step'));
+    var detail = document.getElementById('glpStepDetails');
+    var bar = document.getElementById('glpProgressBar');
+
+    var copy = [
+      { h:'Step 1: Consult with Provider & Labs',
+        p:'Meet with your specialist to review your health history, goals, and lab results. We’ll determine the safest, most effective plan tailored to you.' },
+      { h:'Step 2: Nutrition Plan',
+        p:'Dietitian-designed plan tailored to your preferences and schedule, with grocery lists and recipe previews.' },
+      { h:'Step 3: Get Your Shot',
+        p:'If appropriate, start Wegovy®, Ozempic®, Mounjaro®, or a compounded option with careful supervision. We’ll review dosing, timing, safety, and expectations.' },
+      { h:'Step 4: Habits & App',
+        p:'Track meals and activity in-app; your care team monitors progress and supports side-effect management, cravings, and sustainable habit change.' },
+      { h:'Step 5: Follow-Ups & Titration',
+        p:'Virtual or in-person visits to adjust dosing, check labs as needed, and fine-tune nutrition and behavior strategies for consistent results.' },
+      { h:'Step 6: Maintenance',
+        p:'A personalized plan to maintain progress beyond medication—covering nutrition, movement, sleep, and accountability.' }
+    ];
+
+    function setActive(i) {
+      steps.forEach(function(btn, idx){
+        var active = idx === i;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+        btn.tabIndex = active ? 0 : -1;
+      });
+      detail.innerHTML = '<h4 id="stepPanel'+(i+1)+'">'+copy[i].h+'</h4><p>'+copy[i].p+'</p>';
+      detail.setAttribute('aria-labelledby', 'step'+(i+1));
+      var w = ((i+1)/steps.length)*100;
+      bar.style.width = w + '%';
+    }
+
+    steps.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setActive(parseInt(btn.dataset.index,10));
+      });
+    });
+
+    setActive(0);
+  })();
+</script>
