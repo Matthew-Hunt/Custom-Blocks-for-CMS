@@ -1,0 +1,60 @@
+<section class="hero-viewport">
+<div aria-hidden="true" class="video-bg"><iframe allow="autoplay; fullscreen; picture-in-picture" frameborder="0" loading="lazy" src="https://player.vimeo.com/video/1119893618?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;dnt=1" title="Background video"></iframe>
+<div class="video-scrim">&nbsp;</div>
+</div>
+
+<div class="hero-content d-flex flex-column justify-content-center align-items-center text-center text-white">
+<h1 class="display-3 font-weight-bold mb-4">Unlock the Power of Your Mind</h1>
+
+<p class="lead mb-4">Enhance focus, clarity, and performance with cutting-edge brain optimization techniques.</p>
+<a class="btn btn-primary btn-lg" href="#learn-more"><span class="link-content" style="display: inherit;">Learn More</span></a></div>
+</section>
+<style type="text/css">.hero-viewport{
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:#000;
+}
+.video-bg{
+  position: absolute; inset: 0;
+  z-index: 0; overflow: hidden;
+}
+.video-bg iframe{
+  position:absolute; top:50%; left:50%;
+  width: 177.78vh;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+@media (min-aspect-ratio: 16/9){
+  .video-bg iframe{
+    width: 100%;
+    height: 56.25vw;
+  }
+}
+.video-scrim{
+  position:absolute; inset:0;
+  background: radial-gradient(120% 120% at 50% 50%, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);
+}
+.hero-content{
+  position: relative; z-index: 2;
+  padding: 0 1.25rem;
+}
+@media (max-width: 768px){
+  .video-bg{ display:none; }
+  .hero-viewport{
+    background: linear-gradient(135deg, #0052a5, #00264d);
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .video-bg{ display:none; }
+  .hero-viewport{
+    background: linear-gradient(135deg, #0052a5, #00264d);
+  }
+}
+.btn-primary{ background-color:#0052a5; border-color:#0052a5; }
+.btn-primary:hover{ filter: brightness(1.08); }
+</style>
