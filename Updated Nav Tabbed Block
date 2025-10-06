@@ -3,7 +3,7 @@
 	<div aria-labelledby="locationsMenu" class="dropdown-menu p-0 mega-panel" role="menu">
 	<div class="mega-row mega-cta" role="none"><a class="btn btn-primary mega-cta-btn" href="/find-care" role="menuitem"><span class="link-content" style="display: inherit;">Find a Location / Doctor</span></a><button class="btn btn-outline-secondary mega-cta-btn" id="useMyLocationBtn" type="button">Use My Location</button></div>
 
-	<hr class="m-0" />
+	<hr class="m-0">
 	<div class="mega-row mega-body" role="none">
 	<div class="mega-col services" role="none">
 	<div class="mega-h">Services</div>
@@ -41,7 +41,7 @@
 		<li class="division"><a class="division-link" href="/divisions/schogel-fardo"><span class="link-content" style="display: inherit;">Schogel &amp; Fardo Family Medicine</span></a></li>
 		<li class="division"><a class="division-link" href="/divisions/primary-care-associates"><span class="link-content" style="display: inherit;">Primary Care Associates</span></a></li>
 		<li class="division"><a class="division-link" href="/divisions/family-practice-associates"><span class="link-content" style="display: inherit;">Family Practice Associates</span></a></li>
-		<li class="all-link"><a href="/locations?service=family-internal-medicine"><span class="link-content" style="display: inherit;">All Family &amp; Internal Medicine Locations &rarr;</span></a></li>
+		<li class="all-link"><a href="/locations?service=family-internal-medicine"><span class="link-content" style="display: inherit;">All Family &amp; Internal Medicine Locations →</span></a></li>
 	</ul>
 	</section>
 
@@ -49,14 +49,14 @@
 	<div class="mega-h">Womens Health &amp; Gynecology</div>
 
 	<ul class="divisions-list">
-		<li class="division"><a class="division-link" href="/divisions/genesis-womens-health"><span class="link-content" style="display: inherit;">Genesis Women&rsquo;s Health</span></a><button aria-controls="whg-genesis" aria-expanded="false" aria-label="Toggle Women’s Health locations" class="toggle-locs"></button>
+		<li class="division"><a class="division-link" href="/divisions/genesis-womens-health"><span class="link-content" style="display: inherit;">Genesis Women’s Health</span></a><button aria-controls="whg-genesis" aria-expanded="false" aria-label="Toggle Women’s Health locations" class="toggle-locs"></button>
 
 		<ul class="locations" id="whg-genesis">
 			<li><a href="/locations/genesis-womens-health-north"><span class="link-content" style="display: inherit;">North Office</span></a></li>
 			<li><a href="/locations/genesis-womens-health-south"><span class="link-content" style="display: inherit;">South Office</span></a></li>
 		</ul>
 		</li>
-		<li class="all-link"><a href="/locations?service=womens-health-gynecology"><span class="link-content" style="display: inherit;">All Women&rsquo;s Health Locations &rarr;</span></a></li>
+		<li class="all-link"><a href="/locations?service=womens-health-gynecology"><span class="link-content" style="display: inherit;">All Women’s Health Locations →</span></a></li>
 	</ul>
 	</section>
 
@@ -65,7 +65,7 @@
 
 	<ul class="divisions-list">
 		<li class="division"><a class="division-link" href="/divisions/genesis-labs"><span class="link-content" style="display: inherit;">Genesis Labs</span></a></li>
-		<li class="all-link"><a href="/locations?service=lab"><span class="link-content" style="display: inherit;">All Lab Locations &rarr;</span></a></li>
+		<li class="all-link"><a href="/locations?service=lab"><span class="link-content" style="display: inherit;">All Lab Locations →</span></a></li>
 	</ul>
 	</section>
 
@@ -152,3 +152,4 @@
   .mega-col.detail{max-height:58vh}
 }
 </style>
+
