@@ -43,3 +43,52 @@
 <div class="scroller-container" id="scroller">
 <div class="scroller-track" id="track"><img alt="Image 1" /> <img alt="Image 2" /> <img alt="Image 3" /> <img alt="Image 4" /> <img alt="Image 1" /> <img alt="Image 2" /> <img alt="Image 3" /> <img alt="Image 4" /></div>
 </div>
+
+<script>
+    const scroller = document.getElementById('scroller');
+    const track = document.getElementById('track');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    scroller.addEventListener('mousedown', (e) => {
+      isDown = true;
+      track.style.animationPlayState = 'paused';
+      startX = e.pageX - scroller.offsetLeft;
+      scrollLeft = scroller.scrollLeft;
+    });
+
+    scroller.addEventListener('mouseleave', () => {
+      isDown = false;
+      track.style.animationPlayState = 'running';
+    });
+
+    scroller.addEventListener('mouseup', () => {
+      isDown = false;
+      track.style.animationPlayState = 'running';
+    });
+
+    scroller.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scroller.offsetLeft;
+      const walk = (x - startX) * 2;
+      scroller.scrollLeft = scrollLeft - walk;
+    });
+
+    scroller.addEventListener('touchstart', (e) => {
+      track.style.animationPlayState = 'paused';
+      startX = e.touches[0].pageX - scroller.offsetLeft;
+      scrollLeft = scroller.scrollLeft;
+    });
+
+    scroller.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX - scroller.offsetLeft;
+      const walk = (x - startX) * 2;
+      scroller.scrollLeft = scrollLeft - walk;
+    });
+
+    scroller.addEventListener('touchend', () => {
+      track.style.animationPlayState = 'running';
+    });
+  </script>
