@@ -1,0 +1,92 @@
+<h2 class="text-center fs-2 mb-4 fw-bold">Simplify the Complexity of Longevity <b>down</b> to 3 Essentials.</h2>
+
+<div class="container py-4">
+<div class="row g-4">
+<div class="col-12 col-lg-4 text-center fade-in">
+<div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-start align-items-center custom-border custom-card">
+<div class="icon-wrapper mb-3"><i class="fas fa-heartbeat fa-3x"></i></div>
+
+<h3 class="text-purple mb-3">Avoid Preventable Disease &amp; Early Death</h3>
+
+<p class="text-block">Are you metabolically healthy? Are you detecting potential health risks early? Are you taking a proactive approach to your healthcare? Up to 80% of heart disease, stroke, cancer, and dementia are preventable with the right approach. &gt;&gt; <a href="https://links.healthspanmd.com/widget/bookings/healthspanmd-book-appointment"><span class="link-content" style="display: inherit;">Get the results you deserve.</span></a></p>
+</div>
+</div>
+
+<div class="col-12 col-lg-4 text-center fade-in">
+<div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-start align-items-center custom-border custom-card">
+<div class="icon-wrapper mb-3"><i class="fas fa-dumbbell fa-3x"></i></div>
+
+<h3 class="text-purple mb-3">Avoid Becoming Frail</h3>
+
+<p class="text-block">Are you strong? Are you fit? Are you stable and able to avoid falls and injury? Maintaining strength, endurance, and stability helps keep you active, resilient, and capable of living life on your terms. &gt;&gt; <a href="https://links.healthspanmd.com/widget/bookings/healthspanmd-book-appointment"><span class="link-content" style="display: inherit;">Get the results you deserve.</span></a></p>
+</div>
+</div>
+
+<div class="col-12 col-lg-4 text-center fade-in">
+<div class="p-4 border rounded shadow-sm h-100 d-flex flex-column justify-content-start align-items-center custom-border custom-card">
+<div class="icon-wrapper mb-3"><i class="fas fa-brain fa-3x"></i></div>
+
+<h3 class="text-purple mb-3">Avoid Cognitive Impairment</h3>
+
+<p class="text-block">Are you socially connected? Are you emotionally resilient? Do you have a longevity mindset? Strong relationships, mental resilience, and an optimistic outlook are essential for keeping your mind sharp and adaptable. &gt;&gt; <a href="https://links.healthspanmd.com/widget/bookings/healthspanmd-book-appointment"><span class="link-content" style="display: inherit;">Get the results you deserve.</span></a></p>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://kit.fontawesome.com/a2e0e6c30b.js" crossorigin="anonymous"></script>
+<style>
+  .text-purple {
+    color: #534387;
+    font-weight: 600;
+  }
+  .custom-border {
+    border: 2px solid #C6BADF;
+  }
+  .icon-wrapper {
+    color: #534387;
+    transition: transform 0.4s ease;
+  }
+  .custom-card {
+    transition: all 0.4s ease;
+    background-color: #FFFFFF;
+  }
+  .custom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(83, 67, 135, 0.2);
+    border-color: #A390D9;
+    background-color: #F9F7FC;
+  }
+  .custom-card:hover .icon-wrapper {
+    transform: scale(1.2);
+    color: #A390D9;
+  }
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.3,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  });
+</script>
